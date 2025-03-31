@@ -16,6 +16,17 @@ public class LoginManager : MonoBehaviour
        
     }
 
+     [Header("Panels")]
+    public GameObject loginPanel;
+    public GameObject registerPanel;
+   
+     public void OpnePanel(GameObject panel){
+        loginPanel.SetActive(false);
+        registerPanel.SetActive(false);
+
+        panel.SetActive(true);
+    }
+
     public void ActivarLogin() //M�todo para activar el panel de Inicio de Sesi�n
     {
         Login.SetActive(true);
