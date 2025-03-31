@@ -44,3 +44,17 @@ The following packages were updated:
   com.unity.textmeshpro from version 3.0.6 to 3.0.7
   com.unity.timeline from version 1.7.1 to 1.7.6
   com.unity.visualscripting from version 1.7.8 to 1.9.4
+
+=== Wed Mar 26 16:47:04 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.ads@4.4.2
+  com.unity.analytics@3.8.1
+  com.unity.purchasing@4.11.0
+  com.unity.xr.legacyinputhelpers@2.1.12
+  com.unity.ai.navigation@1.1.5
