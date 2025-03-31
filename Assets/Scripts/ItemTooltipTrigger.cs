@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ItemTooltipTrigger : MonoBehaviour {
-    public string itemInfo = "Esto es un cubo especial.";
+    public string itemInfo = "Information about the item goes here.";
     private Tooltip tooltip;
 
     void Start() {
