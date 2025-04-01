@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Checkboard.cs.meta
-guid: 4338cb58b91e98942a33be87f6d17624
-========
-guid: c196bf7ba67cb0c4c86ee07805243903
->>>>>>>> develop:Assets/Scripts/ICheckBoard.cs.meta
+guid: 2bdeb7e88bdf34d4da81a240bc870d68
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
