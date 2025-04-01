@@ -3,7 +3,7 @@ using UnityEngine;
 public interface ICheckboard
 {
     /// <summary>Registra una nueva tarea en el checkboard</summary>
-    /// <param name="taskOrder">Para el identificador único de la tarea</param>
+    /// <param name="taskOrder">Para el identificador Ãºnico de la tarea</param>
     /// <param name="description">Es el texto descriptivo de la tarea</param>
     void RegisterTask(int taskOrder, string description);
 
