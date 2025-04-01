@@ -42,7 +42,7 @@ public class Herramienta : MonoBehaviour
     void OnMouseUp()
     {
         dragging = false; // Desactivar el arrastre
-        rb.useGravity = true; // Reactivar la gravedad
+        //rb.useGravity = true; // Reactivar la gravedad (Desactivado para poder 
         rb.velocity = Vector3.zero; // Detener el movimiento residual
     }
 
