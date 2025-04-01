@@ -42,4 +42,9 @@ public class LoginManager : MonoBehaviour
     {
         SceneManager.LoadScene("MenuCancel");
     }
+
+    public void CargarEscena(string nombreEscena)
+    {
+        SceneManager.LoadScene(nombreEscena);
+    }
 }
