@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Morado
   - Narannja
+  - Selectable
   layers:
   - Default
   - TransparentFX
