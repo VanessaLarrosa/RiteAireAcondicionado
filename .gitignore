@@ -1,58 +1,25 @@
 # Este archivo se crea automáticamente al crear un proyecto en Unity.
 
-# Ignorar carpetas generadas automáticamente por Unity
+# Esta carpeta contiene los paquetes instalados en el proyecto.
 /Library/
 /Temp/
 /Obj/
 /Build/
 /Builds/
-/MemoryCaptures/
-/Logs/
-
-# Ignorar paquetes y configuraciones de Unity
 /Assets/AssetStoreTools*
+
+# Archivos de configuración de Unity
 /UserSettings/
 /ProjectSettings/ProjectVersion.txt
 /ProjectSettings/ProjectSettings.asset
-/ProjectSettings/Packages/
-/Packages/packages-lock.json
 
-# Ignorar archivos generados por Visual Studio y Rider
+# Archivos de configuración de Visual Studio
 *.csproj
 *.sln
 *.userprefs
-*.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.bak
 
-# Ignorar archivos generados por compilación
-*.apk
-*.aab
-*.ipa
-*.exe
-*.dll
-*.app
-*.map
-*.so
-*.idb
-*.hprof
-
-# Ignorar archivos generados por Unity Shader Compiler
-/shadercompiler-*.log
-
-# Ignorar archivos específicos del sistema operativo
+# Archivos de configuración de macOS
 .DS_Store
-Thumbs.db
 
-# Ignorar archivos generados automáticamente por compilación y el entorno de desarrollo
-.vs/
-Logs/
-*.log
-*.json
-*.csproj
-*.sln
-*.user
+# Archivos de configuración de Windows
+Thumbs.db
