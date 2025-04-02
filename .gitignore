@@ -54,3 +54,8 @@ Thumbs.db
 *.json
 *.user
 
+# PERO incluir explícitamente DOTween
+!Assets/Plugins/Demigiant/DOTween/**/*.dll
+!Assets/Plugins/Demigiant/DOTween/**/*.mdb
+!Assets/Plugins/Demigiant/DOTween/**/*.pdb
+

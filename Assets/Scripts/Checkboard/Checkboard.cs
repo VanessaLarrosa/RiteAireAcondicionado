@@ -3,23 +3,28 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class Checkboard : MonoBehaviour, ICheckboard
 {
-    [Header("Arrastrar aquí")]
+    [Header("Arrastrar aquï¿½")]
     public Image pencil; //la imagen del lapiz que tacha
     public AudioClip scratchSound; //El audio al tachar
-    public Transform tasksContainer; // Aqui se crearán las tareas(es el ChechBoard)
+    public Transform tasksContainer; // Aqui se crearï¿½n las tareas(es el ChechBoard)
     public GameObject taskPrefab;   // He hecho un Prefab con las tareas base(tarea+tachado)(tiene que ser TextMeshPro+imagen)
 
-    [Header("Ajustes de Animación + sonido")] //Opciones para cuadrarlo bien
+    public static Checkboard Instance;
+    public RectTransform libroTransform;
+    public bool bookHide; // Ocultar Tareas Pendientes
+
+    [Header("Ajustes de Animaciï¿½n + sonido")] //Opciones para cuadrarlo bien
     [Tooltip("Delay antes de que suene el efecto de tachado")]
     public float soundDelay = 0.1f;
-    [Tooltip("Duración total de la animación de tachado")]
+    [Tooltip("Duraciï¿½n total de la animaciï¿½n de tachado")]
     public float animationDuration = 0.5f;
-    [Tooltip("Distancia que recorre el lápiz")]
+    [Tooltip("Distancia que recorre el lï¿½piz")]
     public float pencilTravelDistance = 300f;
-    [Tooltip("Posición inicial del lápiz (derecha de la tarea)")]
+    [Tooltip("Posiciï¿½n inicial del lï¿½piz (derecha de la tarea)")]
     public float pencilStartOffset = 200f;
 
     // "Diccionrio" para guardar las tareas numeradas
@@ -33,9 +38,24 @@ public class Checkboard : MonoBehaviour, ICheckboard
         public bool isCompleted;
     }
 
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        bookHide = true;
+    }
+
     void Start()
     {
-        // Ejemplos de registro de tareas iniciales para hacer pruebas (esto luego lo pulirá Yeray con un ResgisterTask)
+        // Ejemplos de registro de tareas iniciales para hacer pruebas (esto luego lo pulirï¿½ Yeray con un ResgisterTask)
         RegisterTask(1, "Pulsa la tecla ' T '");
         RegisterTask(2, "Ahora pulsa la tecla ' Y '");
         RegisterTask(3, "Ahora pulsa la tecla ' U '");
@@ -57,19 +77,42 @@ public class Checkboard : MonoBehaviour, ICheckboard
         
     }
 
-    // Método para AÑADIR TAREAS NUEVAS (se llamarán desde otros scripts) es de la interfaz ICheckboard
+    void Update()
+    {
+        // Para los ejemplos y simulaciones de tareas
+        if (Input.GetKeyDown(KeyCode.T)) CompleteTask(1);
+        if (Input.GetKeyDown(KeyCode.Y)) CompleteTask(2);
+        if (Input.GetKeyDown(KeyCode.U)) CompleteTask(3);
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            bookHide = !bookHide;
+
+            if (bookHide == true)
+            {
+                HideBook();
+            }
+            else
+            {
+                ShowBook();
+            }
+
+        }
+    }
+
+    // Mï¿½todo para Aï¿½ADIR TAREAS NUEVAS (se llamarï¿½n desde otros scripts) es de la interfaz ICheckboard
     public void RegisterTask(int taskOrder, string description)
     {
         if (tasks.ContainsKey(taskOrder))
         {
-            Debug.LogError($"Task order {taskOrder} ya está registrado."); //por si se duplican tareas
+            Debug.LogError($"Task order {taskOrder} ya estï¿½ registrado."); //por si se duplican tareas
             return;
         }
 
         // Creamos una nueva tarea desde el prefab
         GameObject newTask = Instantiate(taskPrefab, tasksContainer);
         TextMeshProUGUI textComp = newTask.GetComponentInChildren<TextMeshProUGUI>();
-        Image line = newTask.GetComponentInChildren<Image>(true); //Para buscar aunque esté desactivado
+        Image line = newTask.GetComponentInChildren<Image>(true); //Para buscar aunque estï¿½ desactivado
 
 
 
@@ -86,7 +129,7 @@ public class Checkboard : MonoBehaviour, ICheckboard
         });
     }
 
-    // Método para TACHAR TAREAS (se llama automáticamente cuando se complete algo) de la interfaz ICheckboard
+    // Mï¿½todo para TACHAR TAREAS (se llama automï¿½ticamente cuando se complete algo) de la interfaz ICheckboard
     public void CompleteTask(int taskOrder)
     {
         if (tasks.TryGetValue(taskOrder, out TaskUI task))
@@ -96,8 +139,8 @@ public class Checkboard : MonoBehaviour, ICheckboard
                 Debug.Log($"La tarea {taskOrder} ('{task.textComponent.text}') YA ESTABA COMPLETADA");
                 return;
             }
-            Debug.Log($"¡Tarea {taskOrder} COMPLETADA!: {task.textComponent.text}"); //Avisa de la tarea cpmpletada
-            StartCoroutine(TachadoAnimation(task)); //Empieza la animación
+            Debug.Log($"ï¿½Tarea {taskOrder} COMPLETADA!: {task.textComponent.text}"); //Avisa de la tarea cpmpletada
+            StartCoroutine(TachadoAnimation(task)); //Empieza la animaciï¿½n
         }
         else
         {
@@ -105,10 +148,10 @@ public class Checkboard : MonoBehaviour, ICheckboard
         }
     }
 
-    // Todo el tema del tachado (no tocar mucho a menos que quieras cambiar la animación)
+    // Todo el tema del tachado (no tocar mucho a menos que quieras cambiar la animaciï¿½n)
     private IEnumerator TachadoAnimation(TaskUI task)
     {
-        // 1. Posicion para el lápiz
+        // 1. Posicion para el lï¿½piz
         pencil.transform.position = task.textComponent.transform.position + new Vector3(pencilStartOffset, 0, 0);
         pencil.gameObject.SetActive(true);
 
@@ -116,7 +159,7 @@ public class Checkboard : MonoBehaviour, ICheckboard
         yield return new WaitForSeconds(soundDelay);
         AudioSource.PlayClipAtPoint(scratchSound, Camera.main.transform.position);
 
-        // 3. Animación del lápiz
+        // 3. Animaciï¿½n del lï¿½piz
         float elapsed = 0f;
         Vector3 startPos = pencil.transform.position;
         Vector3 endPos = startPos - new Vector3(pencilTravelDistance, 0, 0);
@@ -128,14 +171,14 @@ public class Checkboard : MonoBehaviour, ICheckboard
             yield return null;
         }
 
-        // 4. Efectos visuales del tachado (texto se vuelve gris, y línea roja))
+        // 4. Efectos visuales del tachado (texto se vuelve gris, y lï¿½nea roja))
         task.redLine.gameObject.SetActive(true);
         task.textComponent.color = new Color(0.6f, 0.6f, 0.6f);
         //task.textComponent.fontStyle = FontStyles.Strikethrough;
         task.isCompleted = true;
 
         // 5. GUARDAR ESTADO AL COMPLETAR
-        // Obtenemos el número de tarea (taskOrder) desde el diccionario
+        // Obtenemos el nï¿½mero de tarea (taskOrder) desde el diccionario
         int taskOrder = -1;
         foreach (var kvp in tasks)
         {
@@ -154,16 +197,20 @@ public class Checkboard : MonoBehaviour, ICheckboard
         }
 
 
-        // 6. Volver a ocultar lápiz
+        // 6. Volver a ocultar lï¿½piz
         yield return new WaitForSeconds(0.4f);
         pencil.gameObject.SetActive(false);
     }
 
-    void Update()
+
+    public void ShowBook()
     {
-        // Para los ejemplos y simulaciones de tareas
-        if (Input.GetKeyDown(KeyCode.T)) CompleteTask(1);
-        if (Input.GetKeyDown(KeyCode.Y)) CompleteTask(2);
-        if (Input.GetKeyDown(KeyCode.U)) CompleteTask(3);
+        libroTransform.DOAnchorPosX(-600, 0.5f);
+    }
+
+    public void HideBook()
+    {
+        libroTransform.DOAnchorPosX(-1200, 0.5f);
+
     }
 }
