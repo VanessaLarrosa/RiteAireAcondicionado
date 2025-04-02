@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 // Obliga a que el objeto tenga un Rigidbody
 [RequireComponent(typeof(Rigidbody))]
-public class Herramienta : MonoBehaviour, IInteract
+public class Herramienta : MonoBehaviour
 {
 
     private Rigidbody rb;
@@ -79,23 +79,7 @@ public class Herramienta : MonoBehaviour, IInteract
         }
     }
 
-    // Cuando el objeto colisiona con otro
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"Colisión con: {collision.gameObject.name}"); // Mostrar nombre del objeto con el que se colisiona
-
-
-        // Detectar colisiones específicas por tag
-        switch (collision.gameObject.tag)
-        {
-            case "Morado":
-                Debug.Log("Colisión Morado");
-                break;
-            case "Naranja":
-                Debug.Log("Colisión Naranja");
-                break;
-        }
-    }
+ 
 
     // Convertir posición del mouse en pantalla a posición en el mundo 3D
     private Vector3 GetMouseWorldPosition()
@@ -107,20 +91,7 @@ public class Herramienta : MonoBehaviour, IInteract
         return Camera.main.ScreenToWorldPoint(screenMouse);
     }
 
-    public void Interact()
-    {
-        Debug.Log("Interactuando con la herramienta");
-    }
-
-    public void GetName()
-    {
-        Debug.Log(gameObject.name);
-    }
-
-    public void Completed(bool value)
-    {
-        Debug.Log($"Tarea completada: {value}");
-    }
+   
 
     public void OnHoverEnter()
     {
