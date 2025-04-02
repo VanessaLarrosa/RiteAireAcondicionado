@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 42cfd964505c1db439aba134293e2304
+  - enabled: 1
+    path: Assets/Scenes/MenuCancel.unity
+    guid: c3204ed2aa8900140b95311e8d9b5883
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 204196e8b79b5c94d900d72299f74379
+  - enabled: 1
+    path: Assets/Scenes/Drag&Drop.unity
+    guid: ff2c1fb26c7e1d14fb735665a03f9093
   m_configObjects: {}
