@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\",
+  "WorkspaceRootPath": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\herramienta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\users\\manuh\\onedrive\\documentos\\github\\riteaireacondicionado\\assets\\scripts\\selection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\assets\\scripts\\herramienta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\herramienta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\mainpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\assets\\scripts\\mainpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\tooltip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\assets\\scripts\\tooltip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tooltip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\checkboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\assets\\scripts\\checkboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\checkboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -35,23 +39,35 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Herramienta.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Herramienta.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Herramienta.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Herramienta.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Herramienta.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Title": "Selection.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Selection.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Selection.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Selection.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Selection.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T12:22:38.714Z",
+              "WhenOpened": "2025-04-01T14:50:04.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Herramienta.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Herramienta.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Herramienta.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Herramienta.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Herramienta.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T12:22:38.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainPanel.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\MainPanel.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\MainPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainPanel.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\MainPanel.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\MainPanel.cs",
               "RelativeToolTip": "Assets\\Scripts\\MainPanel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -59,11 +75,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Tooltip.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Tooltip.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Tooltip.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tooltip.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Tooltip.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Tooltip.cs",
               "RelativeToolTip": "Assets\\Scripts\\Tooltip.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -71,11 +87,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LoginManager.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\LoginManager.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\LoginManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoginManager.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\LoginManager.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\LoginManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\LoginManager.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,11 +99,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Checkboard.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Checkboard.cs",
+              "DocumentMoniker": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Checkboard.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Checkboard.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Checkboard.cs",
+              "ToolTip": "C:\\Users\\manuh\\OneDrive\\Documentos\\GitHub\\RiteAireAcondicionado\\Assets\\Scripts\\Checkboard.cs",
               "RelativeToolTip": "Assets\\Scripts\\Checkboard.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAIwIUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

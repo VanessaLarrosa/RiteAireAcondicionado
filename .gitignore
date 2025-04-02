@@ -1,17 +1,17 @@
 # Este archivo se crea automáticamente al crear un proyecto en Unity.
 
 # Ignorar carpetas generadas automáticamente por Unity
-/Library/
-/Temp/
-/Obj/
-/Build/
-/Builds/
-/MemoryCaptures/
-/Logs/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Ll]ogs/
 
 # Ignorar paquetes y configuraciones de Unity
-/Assets/AssetStoreTools*
-/UserSettings/
+# /[Aa]ssets/AssetStoreTools*
+/[Uu]ser[Ss]ettings/
 /ProjectSettings/ProjectVersion.txt
 /ProjectSettings/ProjectSettings.asset
 /ProjectSettings/Packages/
@@ -42,7 +42,7 @@
 *.hprof
 
 # Ignorar archivos generados por Unity Shader Compiler
-/shadercompiler-*.log
+/[Ss]hadercompiler-*.log
 
 # Ignorar archivos específicos del sistema operativo
 .DS_Store
@@ -50,30 +50,7 @@ Thumbs.db
 
 # Ignorar archivos generados automáticamente por compilación y el entorno de desarrollo
 .vs/
-Logs/
-*.log
+/Logs/*.log
 *.json
-*.csproj
-*.sln
 *.user
-*.log
-Logs/AssetImportWorker2-prev.log
-Logs/AssetImportWorker3-prev.log
-Logs/AssetImportWorker4-prev.log
-Logs/AssetImportWorker5-prev.log
-Logs/AssetImportWorker6-prev.log
-Logs/AssetImportWorker7-prev.log
-Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Logs/shadercompiler-UnityShaderCompiler.exe10.log
-Logs/shadercompiler-UnityShaderCompiler.exe11.log
-Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Logs/shadercompiler-UnityShaderCompiler.exe4.log
-Logs/shadercompiler-UnityShaderCompiler.exe5.log
-Logs/shadercompiler-UnityShaderCompiler.exe6.log
-Logs/shadercompiler-UnityShaderCompiler.exe7.log
-Logs/shadercompiler-UnityShaderCompiler.exe8.log
-Logs/shadercompiler-UnityShaderCompiler.exe9.log
-*.log
-*.log
+
