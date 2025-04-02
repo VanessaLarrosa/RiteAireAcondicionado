@@ -42,7 +42,7 @@
 *.hprof
 
 # Ignorar archivos generados por Unity Shader Compiler
-/shadercompiler-*.log
+/[Ss]hadercompiler-*.log
 
 # Ignorar archivos específicos del sistema operativo
 .DS_Store
@@ -50,8 +50,7 @@ Thumbs.db
 
 # Ignorar archivos generados automáticamente por compilación y el entorno de desarrollo
 .vs/
-Logs/
-*.log
+/Logs/*.log
 *.json
 *.user
 
