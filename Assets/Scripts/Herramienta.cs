@@ -122,6 +122,20 @@ public class Herramienta : MonoBehaviour, IInteract
         Debug.Log($"Tarea completada: {value}");
     }
 
+    public void OnHoverEnter()
+    {
+        if (!dragging)
+        {
+            Debug.Log($"[Herramienta] {gameObject.name} señalada", gameObject);
+            // Activar tooltip aquí si se quiere
+        }
+    }
+
+    public void OnHoverExit()
+    {
+        // Desactivar tooltip aquí si se quiere
+    }
+
     private void CheckValidDrop()
     {
         isDroppedOnValidPoint = false; // Reiniciar el estado antes de verificar

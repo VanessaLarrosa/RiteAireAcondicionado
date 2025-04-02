@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49233666}
   - component: {fileID: 49233665}
+  - component: {fileID: 49233667}
   m_Layer: 0
   m_Name: ValidDropPoint 1
   m_TagString: Untagged
@@ -175,6 +176,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &49233667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49233664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &80540287
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +249,7 @@ GameObject:
   - component: {fileID: 83612964}
   - component: {fileID: 83612968}
   - component: {fileID: 83612969}
+  - component: {fileID: 83612970}
   m_Layer: 0
   m_Name: Pinzas
   m_TagString: Selectable
@@ -376,6 +391,19 @@ MonoBehaviour:
   - {fileID: 504971944}
   - {fileID: 1900094177}
   validDropDistance: 0.5
+--- !u!114 &83612970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83612963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &172142562
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +573,7 @@ GameObject:
   - component: {fileID: 288408345}
   - component: {fileID: 288408349}
   - component: {fileID: 288408350}
+  - component: {fileID: 288408351}
   m_Layer: 0
   m_Name: Alicate
   m_TagString: Selectable
@@ -686,6 +715,19 @@ MonoBehaviour:
   - {fileID: 504971944}
   - {fileID: 1900094177}
   validDropDistance: 0.5
+--- !u!114 &288408351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288408344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1130,7 @@ GameObject:
   - component: {fileID: 492539950}
   - component: {fileID: 492539954}
   - component: {fileID: 492539955}
+  - component: {fileID: 492539956}
   m_Layer: 0
   m_Name: Destornillador
   m_TagString: Selectable
@@ -1229,6 +1272,19 @@ MonoBehaviour:
   - {fileID: 504971944}
   - {fileID: 1900094177}
   validDropDistance: 0.5
+--- !u!114 &492539956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492539949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &504971942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504971944}
   - component: {fileID: 504971943}
+  - component: {fileID: 504971945}
   m_Layer: 0
   m_Name: ValidDropPoint 4
   m_TagString: Untagged
@@ -1282,6 +1339,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504971945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504971942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &526439102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1364,7 @@ GameObject:
   - component: {fileID: 526439105}
   - component: {fileID: 526439104}
   - component: {fileID: 526439103}
+  - component: {fileID: 526439107}
   m_Layer: 0
   m_Name: CuboNaranja
   m_TagString: Narannja
@@ -1387,6 +1458,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943716718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526439107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526439102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &527675793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1522,7 @@ GameObject:
   - component: {fileID: 551408813}
   - component: {fileID: 551408817}
   - component: {fileID: 551408818}
+  - component: {fileID: 551408819}
   m_Layer: 0
   m_Name: Tester
   m_TagString: Selectable
@@ -1579,6 +1664,19 @@ MonoBehaviour:
   - {fileID: 504971944}
   - {fileID: 1900094177}
   validDropDistance: 0.5
+--- !u!114 &551408819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551408812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &679606246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,6 +1755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860107744}
   - component: {fileID: 860107743}
+  - component: {fileID: 860107745}
   m_Layer: 0
   m_Name: ValidDropPoint 3
   m_TagString: Untagged
@@ -1700,6 +1799,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &860107745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860107742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &989470848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1454854539}
   - component: {fileID: 1454854538}
+  - component: {fileID: 1454854540}
   m_Layer: 0
   m_Name: ValidDropPoint 0
   m_TagString: Untagged
@@ -2030,6 +2143,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1454854540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454854537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &1752793071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +2300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900094177}
   - component: {fileID: 1900094176}
+  - component: {fileID: 1900094178}
   m_Layer: 0
   m_Name: ValidDropPoint 5
   m_TagString: Untagged
@@ -2217,6 +2344,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900094178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900094175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &1908307935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,6 +2508,7 @@ GameObject:
   - component: {fileID: 1946834922}
   - component: {fileID: 1946834921}
   - component: {fileID: 1946834920}
+  - component: {fileID: 1946834924}
   m_Layer: 0
   m_Name: CuboMorado
   m_TagString: Morado
@@ -2461,6 +2602,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1943716718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946834924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946834919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1 &1972772234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059447647}
   - component: {fileID: 2059447646}
+  - component: {fileID: 2059447648}
   m_Layer: 0
   m_Name: ValidDropPoint 2
   m_TagString: Untagged
@@ -2589,6 +2744,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527675794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059447648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059447645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddba710b9ec05a8489b9f71e603ad33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
