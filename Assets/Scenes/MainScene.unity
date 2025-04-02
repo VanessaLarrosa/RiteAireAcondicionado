@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -1265,6 +1265,135 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &276622444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276622446}
+  - component: {fileID: 276622445}
+  m_Layer: 0
+  m_Name: BackgroundSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &276622445
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276622444}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f7bb427d98210c04f9109bbf4df57dea,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: ba6a5da9bf9602e46a8f1f6a5ef0d97e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &276622446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276622444}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 561.87415, y: 264.94385, z: 87.85067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287929691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -1824,7 +1953,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -1962,6 +2091,135 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &429941491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429941493}
+  - component: {fileID: 429941492}
+  m_Layer: 0
+  m_Name: FXSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &429941492
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429941491}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1550679129286269765, guid: f7bb427d98210c04f9109bbf4df57dea,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: cdc563058663d444fbfce1d8e0faed53, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &429941493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429941491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 561.87415, y: 264.94385, z: 87.85067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &503387870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,8 +2378,20 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 1238423589}
+        m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
+        m_MethodName: Setmute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!1 &526728105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2818,7 +3088,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -4208,7 +4478,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -5394,7 +5664,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -5986,8 +6256,8 @@ GameObject:
   - component: {fileID: 1238423586}
   - component: {fileID: 1238423585}
   - component: {fileID: 1238423584}
-  - component: {fileID: 1238423583}
   - component: {fileID: 1238423588}
+  - component: {fileID: 1238423589}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5995,31 +6265,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1238423583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238423581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c9f90261035bd4cb1c2d52062492cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumenFX: {fileID: 0}
-  volumenMaster: {fileID: 0}
-  mute: {fileID: 0}
-  mixer: {fileID: 0}
-  fxSource: {fileID: 0}
-  clickSound: {fileID: 0}
-  panels:
-  - {fileID: 901431504}
-  - {fileID: 81701314}
-  - {fileID: 1637825187}
-  - {fileID: 1302685728}
-  - {fileID: 82485401}
-  - {fileID: 1488794027}
 --- !u!114 &1238423584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6121,6 +6366,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913f630940882ff4887344407d15f709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1238423589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238423581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3f1731ee4184a46b25a66bc4085a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumenFX: {fileID: 962335617}
+  volumenMaster: {fileID: 2094931508}
+  mute: {fileID: 504193639}
+  mixer: {fileID: 24100000, guid: f7bb427d98210c04f9109bbf4df57dea, type: 2}
+  fxSource: {fileID: 429941492}
+  clickSound: {fileID: 8300000, guid: cdc563058663d444fbfce1d8e0faed53, type: 3}
+  panels:
+  - {fileID: 901431504}
+  - {fileID: 81701314}
+  - {fileID: 1637825187}
+  - {fileID: 1302685728}
+  - {fileID: 82485401}
+  - {fileID: 1488794027}
 --- !u!1 &1264555192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7803,7 +8073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -9128,7 +9398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -9872,7 +10142,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -10005,7 +10275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1238423583}
+      - m_Target: {fileID: 1238423589}
         m_TargetAssemblyTypeName: MainPanel, Assembly-CSharp
         m_MethodName: OpnePanel
         m_Mode: 2
@@ -10885,3 +11155,5 @@ SceneRoots:
   - {fileID: 262810638}
   - {fileID: 1238423587}
   - {fileID: 1264555195}
+  - {fileID: 276622446}
+  - {fileID: 429941493}
