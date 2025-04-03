@@ -1,17 +1,10 @@
 # Este archivo se crea automáticamente al crear un proyecto en Unity.
 
 # Ignorar carpetas generadas automáticamente por Unity
-<<<<<<< HEAD
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-=======
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
->>>>>>> develop
 /[Bb]uilds/
 /[Mm]emoryCaptures/
 /[Ll]ogs/
