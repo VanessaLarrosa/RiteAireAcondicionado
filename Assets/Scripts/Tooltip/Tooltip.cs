@@ -9,10 +9,10 @@ public class Tooltip : MonoBehaviour {
     public Camera playerCamera;
 
     void Update() {
-        // Posicionar el tooltip a la derecha de la cámara
-        Vector3 screenPosition = playerCamera.WorldToScreenPoint(playerCamera.transform.position + playerCamera.transform.right * 200);
-        transform.position = screenPosition;
+    Vector3 mousePosition = Input.mousePosition;
+    transform.position = mousePosition;
     }
+
 
     public void ShowTooltip(string info) {
         tooltipText.text = info;
