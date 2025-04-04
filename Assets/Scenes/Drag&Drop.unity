@@ -370,7 +370,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &83612969
 MonoBehaviour:
@@ -386,13 +386,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   validDropPoints:
-  - {fileID: 1454854539}
-  - {fileID: 49233666}
-  - {fileID: 2059447647}
-  - {fileID: 860107744}
-  - {fileID: 504971944}
   - {fileID: 1900094177}
   validDropDistance: 0.5
+  distanciaIman: 1.5
+  velocidadIman: 7
 --- !u!114 &83612970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +722,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &288408350
 MonoBehaviour:
@@ -741,13 +738,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   validDropPoints:
-  - {fileID: 1454854539}
-  - {fileID: 49233666}
   - {fileID: 2059447647}
-  - {fileID: 860107744}
-  - {fileID: 504971944}
-  - {fileID: 1900094177}
   validDropDistance: 0.5
+  distanciaIman: 0.5
+  velocidadIman: 99
 --- !u!114 &288408351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1320,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &492539955
 MonoBehaviour:
@@ -1342,13 +1336,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 10
   validDropPoints:
-  - {fileID: 1454854539}
-  - {fileID: 49233666}
-  - {fileID: 2059447647}
-  - {fileID: 860107744}
   - {fileID: 504971944}
-  - {fileID: 1900094177}
   validDropDistance: 0.5
+  distanciaIman: 1.5
+  velocidadIman: 7
 --- !u!114 &492539956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,6 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c770ab9795124517b76e35c3ebf59b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logCooldown: 2
   texto: Naranja
 --- !u!114 &526439109
 MonoBehaviour:
@@ -1777,7 +1769,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &551408818
 MonoBehaviour:
@@ -1794,12 +1786,9 @@ MonoBehaviour:
   followSpeed: 10
   validDropPoints:
   - {fileID: 1454854539}
-  - {fileID: 49233666}
-  - {fileID: 2059447647}
-  - {fileID: 860107744}
-  - {fileID: 504971944}
-  - {fileID: 1900094177}
   validDropDistance: 0.5
+  distanciaIman: 1.5
+  velocidadIman: 7
 --- !u!114 &551408819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,6 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c770ab9795124517b76e35c3ebf59b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logCooldown: 2
   texto: Verde
 --- !u!114 &814207150
 MonoBehaviour:
@@ -2409,6 +2399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c770ab9795124517b76e35c3ebf59b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logCooldown: 2
   texto: Azul
 --- !u!114 &1362701890
 MonoBehaviour:
@@ -3092,6 +3083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c770ab9795124517b76e35c3ebf59b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logCooldown: 2
   texto: Morado
 --- !u!114 &1946834926
 MonoBehaviour:

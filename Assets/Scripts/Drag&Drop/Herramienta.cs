@@ -22,6 +22,10 @@ public class Herramienta : MonoBehaviour
 
     [SerializeField] private float validDropDistance = 0.5f; // Distancia mínima para soltar el objeto en un punto válido
 
+    [Header("Ajustes de atracción a punto válido")]
+    [SerializeField] private float distanciaIman = 0.5f;   // A qué distancia empieza a atraer
+    [SerializeField] private float velocidadIman = 10f;        // Velocidad de atracción
+
 
     void Start()
     {
@@ -76,9 +80,13 @@ public class Herramienta : MonoBehaviour
         // Si se está arrastrando y es arrastrable
         if (dragging)
         {
+
             // Calcular dirección y aplicar velocidad para mover el objeto suavemente
             Vector3 direction = targetPosition - rb.position;
             rb.velocity = direction * followSpeed;
+
+            CheckSnapToValidPoint(); // <- llama a la función nueva
+
         }
     }
 
@@ -131,4 +139,20 @@ public class Herramienta : MonoBehaviour
 
         Debug.Log("No se encuentra en un punto válido");
     }
+    private void CheckSnapToValidPoint()
+    {
+        foreach (Transform dropPoint in validDropPoints)
+        {
+            float distance = Vector3.Distance(transform.position, dropPoint.position);
+
+            if (distance <= distanciaIman)
+            {
+                // Movimiento de atracción tipo imán
+                Vector3 newPosition = Vector3.Lerp(transform.position, dropPoint.position, velocidadIman * Time.deltaTime);
+                rb.MovePosition(newPosition);
+                break; // Solo nos acercamos al primero que cumpla
+            }
+        }
+    }
+
 }

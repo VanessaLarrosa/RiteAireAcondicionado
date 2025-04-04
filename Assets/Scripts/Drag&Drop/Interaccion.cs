@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Interaccion : MonoBehaviour, IInteract
 {
+    private float tiempoUltimoLog = -Mathf.Infinity;
+    [SerializeField] private float logCooldown = 1f; // 1 segundo entre logs
+
+
     public string texto;
 
     public void Completed(bool value)
@@ -16,9 +20,14 @@ public class Interaccion : MonoBehaviour, IInteract
         // throw new System.NotImplementedException();
     }
 
+
     public void Interact()
     {
-        print(texto);
+        if (Time.time - tiempoUltimoLog >= logCooldown)
+        {
+            print(texto);
+            tiempoUltimoLog = Time.time;
+        }
     }
 
     public void OnHoverEnter()
