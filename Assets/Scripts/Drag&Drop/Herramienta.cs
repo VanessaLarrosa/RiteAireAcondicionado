@@ -14,11 +14,14 @@ public class Herramienta : MonoBehaviour
     private bool isDroppedOnValidPoint = false; // Indica si el objeto fue soltado en un punto válido
 
     // Velocidad con la que el objeto sigue al mouse
+    [Header("Movimiento del objeto")]
     [SerializeField] private float followSpeed = 10f;
 
-    [SerializeField] private List<Transform> validDropPoints; //Lista de puntos válidos para soltar el objeto
+    [Header("Puntos válidos para soltar")]
+    [SerializeField] private List<Transform> validDropPoints; // Lista de puntos válidos para soltar el objeto
 
-    [SerializeField] private float validDropDistance = 0.5f; //Distancia mínima para soltar el objeto en un punto válido
+    [SerializeField] private float validDropDistance = 0.5f; // Distancia mínima para soltar el objeto en un punto válido
+
 
     void Start()
     {
