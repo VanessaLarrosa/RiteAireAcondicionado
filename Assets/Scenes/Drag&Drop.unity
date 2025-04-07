@@ -388,8 +388,8 @@ MonoBehaviour:
   validDropPoints:
   - {fileID: 1900094177}
   validDropDistance: 0.5
-  distanciaIman: 1.5
-  velocidadIman: 7
+  distanciaIman: 0.5
+  velocidadIman: 99
 --- !u!114 &83612970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,8 +1338,8 @@ MonoBehaviour:
   validDropPoints:
   - {fileID: 504971944}
   validDropDistance: 0.5
-  distanciaIman: 1.5
-  velocidadIman: 7
+  distanciaIman: 0.5
+  velocidadIman: 99
 --- !u!114 &492539956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,8 +1787,8 @@ MonoBehaviour:
   validDropPoints:
   - {fileID: 1454854539}
   validDropDistance: 0.5
-  distanciaIman: 1.5
-  velocidadIman: 7
+  distanciaIman: 0.5
+  velocidadIman: 99
 --- !u!114 &551408819
 MonoBehaviour:
   m_ObjectHideFlags: 0
