@@ -16,6 +16,8 @@ public class Checkboard : MonoBehaviour, ICheckboard
     public static Checkboard Instance;
     public RectTransform libroTransform;
     public bool bookHide; // Ocultar Tareas Pendientes
+        
+    public PageManager pageManager;// Referencia al PageManager existente
 
     [Header("Ajustes de Animaci�n + sonido")] //Opciones para cuadrarlo bien
     [Tooltip("Delay antes de que suene el efecto de tachado")]
@@ -27,8 +29,16 @@ public class Checkboard : MonoBehaviour, ICheckboard
     [Tooltip("Posici�n inicial del l�piz (derecha de la tarea)")]
     public float pencilStartOffset = 200f;
 
+    [Header("Configuración de paginación")]
+    [Tooltip("Cantidad de tareas por página")]
+    public int tareasPorPagina = 10;
+    [Header("UI References")]
+    [Tooltip("Texto que muestra 'Página X de Y'")]
+    public TextMeshProUGUI pageCountText; // Arrastra tu objeto TextMeshPro aquí
+
+
     // "Diccionrio" para guardar las tareas numeradas
-    private Dictionary<int, TaskUI> tasks = new Dictionary<int, TaskUI>();
+    private Dictionary<Task, TaskUI> tasks = new Dictionary<Task, TaskUI>();
 
     // Clase iterna de cada tarea
     private class TaskUI
@@ -55,34 +65,61 @@ public class Checkboard : MonoBehaviour, ICheckboard
 
     void Start()
     {
-        // Ejemplos de registro de tareas iniciales para hacer pruebas (esto luego lo pulir� Yeray con un ResgisterTask)
-        RegisterTask(1, "Pulsa la tecla ' T '");
-        RegisterTask(2, "Ahora pulsa la tecla ' Y '");
-        RegisterTask(3, "Ahora pulsa la tecla ' U '");
+        UpdatePageText();
+        // ⚠️ Validaciones básicas
+        if (pageManager == null)
+        {
+            pageManager = FindObjectOfType<PageManager>();
+            if (pageManager == null)
+            {
+                Debug.LogError("PageManager no encontrado!");
+                return;
+            }
+        }
 
-        // Carga tareas completadas al iniciar(para que esto funcione se tiene que modificar el cript del menu principal)
-        //foreach (var task in tasks)
-        //{
-        //    int taskOrder = task.Key;
-        //    if (PlayerPrefs.GetInt($"TaskCompleted_{taskOrder}", 0) == 1)
-        //    {
-        //        task.Value.redLine.gameObject.SetActive(true);
-        //        task.Value.textComponent.color = new Color(0.6f, 0.6f, 0.6f);
-        //        task.Value.textComponent.fontStyle = FontStyles.Strikethrough;
-        //        task.Value.isCompleted = true;
-        //        Debug.Log($"Tarea {taskOrder} cargada como completada");
-        //    }
-        //}
+        if (tasksContainer == null || taskPrefab == null)
+        {
+            Debug.LogError("TasksContainer o taskPrefab no asignado!");
+            return;
+        }
 
-        
+        // 🕒 Inicia la lógica de carga después de asegurarse de que todo está bien
+        StartCoroutine(DelayedInit());
     }
+
+    IEnumerator DelayedInit()
+    {
+        yield return null; // ⏳ Esperamos un frame a que Unity inicialice todo
+
+        // 🧮 Actualizamos el número de páginas
+        pageManager.UpdatePageCount();
+
+        // 📋 Mostramos tareas de la primera página
+        ShowCurrentPage();
+
+        // 🧠 Restauramos el estado guardado (PlayerPrefs)
+        foreach (var task in TaskManager.Instance.task)
+        {
+            if (PlayerPrefs.GetString($"TaskCompleted_{task.Summary}", "0") == "1")
+            {
+                if (tasks.TryGetValue(task, out TaskUI taskUI))
+                {
+                    taskUI.redLine.gameObject.SetActive(true);
+                    taskUI.textComponent.color = new Color(0.6f, 0.6f, 0.6f);
+                    taskUI.isCompleted = true;
+                    Debug.Log($"Tarea {task.Summary} cargada como completada");
+                }
+            }
+        }
+    }
+
 
     void Update()
     {
         // Para los ejemplos y simulaciones de tareas
-        if (Input.GetKeyDown(KeyCode.T)) CompleteTask(1);
-        if (Input.GetKeyDown(KeyCode.Y)) CompleteTask(2);
-        if (Input.GetKeyDown(KeyCode.U)) CompleteTask(3);
+       // if (Input.GetKeyDown(KeyCode.T)) CompleteTask(1);
+        //if (Input.GetKeyDown(KeyCode.Y)) CompleteTask(2);
+        //if (Input.GetKeyDown(KeyCode.U)) CompleteTask(3);
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -101,27 +138,28 @@ public class Checkboard : MonoBehaviour, ICheckboard
     }
 
     // M�todo para A�ADIR TAREAS NUEVAS (se llamar�n desde otros scripts) es de la interfaz ICheckboard
-    public void RegisterTask(int taskOrder, string description)
+    public void RegisterTask(Task task)
     {
-        if (tasks.ContainsKey(taskOrder))
+        // Validación añadida:
+        if (taskPrefab == null || tasksContainer == null)
         {
-            Debug.LogError($"Task order {taskOrder} ya est� registrado."); //por si se duplican tareas
+            Debug.LogError("¡Prefab o container no asignados en Checkboard!", this);
+            return;
+        }
+        if (tasks.ContainsKey(task))
+        {
+            Debug.LogError($"Task {task.Summary} ya está registrada.");
             return;
         }
 
-        // Creamos una nueva tarea desde el prefab
         GameObject newTask = Instantiate(taskPrefab, tasksContainer);
         TextMeshProUGUI textComp = newTask.GetComponentInChildren<TextMeshProUGUI>();
-        Image line = newTask.GetComponentInChildren<Image>(true); //Para buscar aunque est� desactivado
+        Image line = newTask.GetComponentInChildren<Image>(true);
 
-
-
-        // Le ponemos el texto (ej: "1. Recoger la llave")
-        textComp.text = $"{taskOrder}. {description}";
+        textComp.text = task.Summary;
         line.gameObject.SetActive(false);
 
-        // La guardamos en el diccionario para luego poder tacharla
-        tasks.Add(taskOrder, new TaskUI
+        tasks.Add(task, new TaskUI
         {
             textComponent = textComp,
             redLine = line,
@@ -130,23 +168,40 @@ public class Checkboard : MonoBehaviour, ICheckboard
     }
 
     // M�todo para TACHAR TAREAS (se llama autom�ticamente cuando se complete algo) de la interfaz ICheckboard
-    public void CompleteTask(int taskOrder)
+    public void CompleteTask(Task task)
     {
-        if (tasks.TryGetValue(taskOrder, out TaskUI task))
+        if (tasks.TryGetValue(task, out TaskUI taskUI))
         {
-            if (task.isCompleted) //Se comprueba si la tarea ya estaba hecha
+            if (taskUI.isCompleted)
             {
-                Debug.Log($"La tarea {taskOrder} ('{task.textComponent.text}') YA ESTABA COMPLETADA");
+                Debug.Log($"La tarea {task.Summary} YA ESTABA COMPLETADA");
                 return;
             }
-            Debug.Log($"�Tarea {taskOrder} COMPLETADA!: {task.textComponent.text}"); //Avisa de la tarea cpmpletada
-            StartCoroutine(TachadoAnimation(task)); //Empieza la animaci�n
+
+            Debug.Log($"¡Tarea COMPLETADA!: {task.Summary}");
+            StartCoroutine(TachadoAnimation(taskUI));
         }
         else
         {
-            Debug.LogError($"No existe la tarea {taskOrder}"); //Por si hiciera falta
+            Debug.LogError($"No existe la tarea {task.Summary}");
         }
     }
+    public void RevertTask(Task task)
+    {
+        if (tasks.TryGetValue(task, out var taskUI))
+        {
+            taskUI.redLine.gameObject.SetActive(false);
+            taskUI.textComponent.color = Color.black;
+            taskUI.isCompleted = false;
+
+            // También lo quitamos del guardado si quieres
+            PlayerPrefs.SetString($"TaskCompleted_{task.Summary}", "0");
+            PlayerPrefs.Save();
+
+            Debug.Log($"Tarea {task.Summary} marcada como INCOMPLETA");
+        }
+    }
+
 
     // Todo el tema del tachado (no tocar mucho a menos que quieras cambiar la animaci�n)
     private IEnumerator TachadoAnimation(TaskUI task)
@@ -177,24 +232,26 @@ public class Checkboard : MonoBehaviour, ICheckboard
         //task.textComponent.fontStyle = FontStyles.Strikethrough;
         task.isCompleted = true;
 
-        // 5. GUARDAR ESTADO AL COMPLETAR
         // Obtenemos el n�mero de tarea (taskOrder) desde el diccionario
-        int taskOrder = -1;
+        // 5. GUARDAR ESTADO AL COMPLETAR
+        Task taskKey = null;
         foreach (var kvp in tasks)
         {
             if (kvp.Value == task)
             {
-                taskOrder = kvp.Key;
+                taskKey = kvp.Key;
                 break;
             }
         }
 
-        if (taskOrder != -1)
+        if (taskKey != null)
         {
-            PlayerPrefs.SetInt($"TaskCompleted_{taskOrder}", 1); // 1 = completada
+            // Usamos el nombre de la tarea como identificador único
+            PlayerPrefs.SetString($"TaskCompleted_{taskKey.Summary}", "1"); // "1" = completada
             PlayerPrefs.Save();
-            Debug.Log($"Tarea {taskOrder} guardada como completada");
+            Debug.Log($"Tarea {taskKey.Summary} guardada como completada");
         }
+
 
 
         // 6. Volver a ocultar l�piz
@@ -212,5 +269,75 @@ public class Checkboard : MonoBehaviour, ICheckboard
     {
         libroTransform.DOAnchorPosX(-1200, 0.5f);
 
+    }
+    public void PlayTachadoFromTask(Task task)
+    {
+        // Reutilizar vuestra animación normal
+        CompleteTask(task);
+    }
+    // Método actualizado para mostrar tareas
+    public void ShowCurrentPage()
+    {
+        // Validaciones
+        if (tasksContainer == null || pageManager == null || taskPrefab == null || TaskManager.Instance == null)
+        {
+            Debug.LogError("❌ Faltan referencias en Checkboard");
+            return;
+        }
+        // Actualizar texto al final
+        UpdatePageText();
+
+        // Elimina solo los objetos que son tareas
+        foreach (Transform child in tasksContainer)
+        {
+            if (child.CompareTag("TaskUI")) // Asegúrate que el prefab tenga este tag
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        tasks.Clear();
+
+        // Calcular tareas a mostrar
+        int startIndex = Mathf.Clamp(pageManager.ActualPage * tareasPorPagina, 0, TaskManager.Instance.task.Count);
+        int endIndex = Mathf.Min(startIndex + tareasPorPagina, TaskManager.Instance.task.Count);
+
+        for (int i = startIndex; i < endIndex; i++)
+        {
+            Task task = TaskManager.Instance.task[i];
+            if (task != null)
+            {
+                RegisterTask(task);
+                if (task.Check) CompleteTask(task);
+            }
+        }
+    }
+
+
+
+    // Actualiza los métodos de paginación
+    public void NextPage()
+    {
+        if (pageManager.ActualPage < pageManager.PageCount - 1)
+        {
+            pageManager.ActualPage++;
+            ShowCurrentPage();
+        }
+    }
+
+    public void PreviousPage()
+    {
+        if (pageManager.ActualPage > 0)
+        {
+            pageManager.ActualPage--;
+            ShowCurrentPage();
+        }
+    }
+    public void UpdatePageText()
+    {
+        if (pageCountText != null && pageManager != null)
+        {
+            pageCountText.text = $"Página {pageManager.ActualPage + 1} de {pageManager.PageCount}";
+        }
     }
 }
