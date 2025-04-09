@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962b4a0c72a66d64c9c852cd9ad656a7, type: 3}
   m_Name: 04_Tarea4
   m_EditorClassIdentifier: 
-  summary: '*Coloca la bola Azul en su plataforma'
+  summary: '*Coloca las pinzas en su plataforma'
   check: 0
   validator: {fileID: 11400000, guid: e84a686e1845c53438e3462b5cf736e1, type: 2}

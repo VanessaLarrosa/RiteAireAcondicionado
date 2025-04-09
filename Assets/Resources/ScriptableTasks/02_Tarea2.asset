@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962b4a0c72a66d64c9c852cd9ad656a7, type: 3}
   m_Name: 02_Tarea2
   m_EditorClassIdentifier: 
-  summary: '*Coloca la bola Naranja en su plataforma'
+  summary: '*Coloca el Tester en su plataforma'
   check: 0
   validator: {fileID: 11400000, guid: f4770fce1b66b9e42ac0b7654a41aab6, type: 2}
