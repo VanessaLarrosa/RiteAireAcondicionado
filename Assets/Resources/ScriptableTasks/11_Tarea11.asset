@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 962b4a0c72a66d64c9c852cd9ad656a7, type: 3}
-  m_Name: 11_TaskTest9 1
+  m_Name: 11_Tarea11
   m_EditorClassIdentifier: 
   summary: Test 11
   check: 0
-  validator: {fileID: 11400000, guid: 69e6490f87d552c488c953053353e6f5, type: 2}
+  validator: {fileID: 0}
