@@ -7,11 +7,12 @@ TagManager:
   - Morado
   - Narannja
   - Selectable
+  - TaskUI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ValidTarget
   - Water
   - UI
   - BlueCube
