@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: 11_TaskTest9 1
   m_EditorClassIdentifier: 
   summary: Test 11
-  check: 1
+  check: 0
+  validator: {fileID: 11400000, guid: 69e6490f87d552c488c953053353e6f5, type: 2}
