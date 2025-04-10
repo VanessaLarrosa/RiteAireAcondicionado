@@ -19,7 +19,7 @@ public class PauseScript : MonoBehaviour
             if (Pause == false)
             {
                 ObjectPauseMenu.SetActive(true);
-                ExitMenu.SetActive(false); // Asegúrate de que el menú de salir esté oculto al pausar
+                ExitMenu.SetActive(false); // Corroborar que el menú de salir esté oculto al pausar
                 Pause = true;
 
                 Time.timeScale = 0f; // Pausa la escena
@@ -36,6 +36,20 @@ public class PauseScript : MonoBehaviour
         }
 
     }
+    //Función que muestra el menú de Pause y esconde el mení de Exit. Funciona igual que la función anterior, pero se va a llamar desde un botón y tener acceso por dos zonas.
+    public void ShowPauseMenuButton()
+    {
+        if (Pause == false)
+        {
+            ObjectPauseMenu.SetActive(true);
+            ExitMenu.SetActive(false); // Corroborar que el menú de salir esté oculto al pausar
+            Pause = true;
+            Time.timeScale = 0f; // Pausa la escena
+            Cursor.visible = true; // Muestra el cursor
+            Cursor.lockState = CursorLockMode.None; // Desbloquea el cursor
+        }
+    }
+
 
     public void ShowExitMenu() // Función que muestra el menú de salir y esconde el menú de pausa
     {
