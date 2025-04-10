@@ -3,18 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Morado
+  - Narannja
+  - Selectable
+  - TaskUI
+>>>>>>> develop
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ValidTarget
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - BlueCube
+  - PurpleCube
+  - GreenCube
+  - OrangeCube
   - 
   - 
   - 

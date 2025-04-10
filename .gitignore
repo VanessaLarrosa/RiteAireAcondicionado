@@ -1,25 +1,61 @@
 # Este archivo se crea automáticamente al crear un proyecto en Unity.
 
-# Esta carpeta contiene los paquetes instalados en el proyecto.
-/Library/
-/Temp/
-/Obj/
-/Build/
-/Builds/
-/Assets/AssetStoreTools*
+# Ignorar carpetas generadas automáticamente por Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Ll]ogs/
 
-# Archivos de configuración de Unity
-/UserSettings/
+# Ignorar paquetes y configuraciones de Unity
+# /[Aa]ssets/AssetStoreTools*
+/[Uu]ser[Ss]ettings/
 /ProjectSettings/ProjectVersion.txt
 /ProjectSettings/ProjectSettings.asset
+/ProjectSettings/Packages/
+/Packages/packages-lock.json
 
-# Archivos de configuración de Visual Studio
+# Ignorar archivos generados por Visual Studio y Rider
 *.csproj
 *.sln
 *.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.bak
 
-# Archivos de configuración de macOS
+# Ignorar archivos generados por compilación
+*.apk
+*.aab
+*.ipa
+*.exe
+*.dll
+*.app
+*.map
+*.so
+*.idb
+*.hprof
+
+# Ignorar archivos generados por Unity Shader Compiler
+/[Ss]hadercompiler-*.log
+
+# Ignorar archivos específicos del sistema operativo
 .DS_Store
-
-# Archivos de configuración de Windows
 Thumbs.db
+
+# Ignorar archivos generados automáticamente por compilación y el entorno de desarrollo
+.vs/
+/Logs/*.log
+*.json
+*.user
+
+# PERO incluir explícitamente DOTween
+!Assets/Plugins/Demigiant/DOTween/**/*.dll
+!Assets/Plugins/Demigiant/DOTween/**/*.mdb
+!Assets/Plugins/Demigiant/DOTween/**/*.pdb
+
