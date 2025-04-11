@@ -8,6 +8,10 @@ TagManager:
   - Narannja
   - Selectable
   - TaskUI
+  - ZonaAlta
+  - ZonaBaja
+  - Objeto
+  - Ghost
   layers:
   - Default
   - TransparentFX

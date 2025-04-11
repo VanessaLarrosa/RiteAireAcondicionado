@@ -40,3 +40,14 @@ public class Interaccion : MonoBehaviour, IInteract
         // throw new System.NotImplementedException();
     }
 }
+
+internal interface IInteract
+{
+    void Interact();
+    void GetName();
+    void Completed(bool value);
+
+    // Nuevos para detecci�n de rat�n
+    void OnHoverEnter();
+    void OnHoverExit();
+}

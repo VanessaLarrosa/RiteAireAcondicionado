@@ -1,0 +1,6 @@
+# Ignorar la carpeta Library
+Library/
+
+# Ignorar archivos de log y temporales
+*.log
+*.pid
