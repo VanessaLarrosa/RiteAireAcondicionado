@@ -3,44 +3,55 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
+using DG.Tweening; // Librería para animaciones suaves como mover objetos o cambiar opacidad
 
+// Clase principal encargada de gestionar el sistema de tareas con animaciones, paginación y guardado de progreso.
 public class Checkboard : MonoBehaviour, ICheckboard
 {
-    [Header("Arrastrar aqu�")]
-    public Image pencil; //la imagen del lapiz que tacha
-    public AudioClip scratchSound; //El audio al tachar
-    public Transform tasksContainer; // Aqui se crear�n las tareas(es el ChechBoard)
-    public GameObject taskPrefab;   // He hecho un Prefab con las tareas base(tarea+tachado)(tiene que ser TextMeshPro+imagen)
+    [Header("Arrastrar aquí")]
+    public Image pencil;                   // Imagen del lápiz animado que dibuja la línea de tachado al completar una tarea
+    public AudioClip scratchSound;        // Sonido que se reproduce cuando se tacha una tarea
+    public Transform tasksContainer;      // Objeto padre que contendrá todas las tareas instanciadas
+    public GameObject taskPrefab;         // Prefab de la tarea (debe contener un TextMeshPro y una imagen para la línea de tachado)
 
-    public static Checkboard Instance;
-    public RectTransform libroTransform;
-    public bool bookHide; // Ocultar Tareas Pendientes
+    public static Checkboard Instance;    // Patrón Singleton: permite acceder a esta clase desde cualquier otro script mediante Checkboard.Instance
+    public RectTransform libroTransform;  // Usado para animar el libro de tareas (mostrar u ocultar)
+    public bool bookHide;                 // Indica si el libro de tareas está oculto (true) o visible (false)
 
-    [Header("Ajustes de Animaci�n + sonido")] //Opciones para cuadrarlo bien
+    public PageManager pageManager;       // Referencia al sistema de paginación que gestiona qué tareas se muestran por página
+
+    [Header("Ajustes de Animación + sonido")]
     [Tooltip("Delay antes de que suene el efecto de tachado")]
-    public float soundDelay = 0.1f;
-    [Tooltip("Duraci�n total de la animaci�n de tachado")]
-    public float animationDuration = 0.5f;
-    [Tooltip("Distancia que recorre el l�piz")]
-    public float pencilTravelDistance = 300f;
-    [Tooltip("Posici�n inicial del l�piz (derecha de la tarea)")]
-    public float pencilStartOffset = 200f;
+    public float soundDelay = 0.1f;       // Tiempo que espera antes de reproducir el sonido del tachado
+    [Tooltip("Duración total de la animación de tachado")]
+    public float animationDuration = 0.5f; // Duración de la animación del lápiz al tachar
+    [Tooltip("Distancia que recorre el lápiz")]
+    public float pencilTravelDistance = 300f; // Distancia horizontal que recorre el lápiz al tachar
+    [Tooltip("Posición inicial del lápiz (derecha de la tarea)")]
+    public float pencilStartOffset = 200f; // Distancia desde el texto de la tarea hasta donde empieza el lápiz
 
-    // "Diccionrio" para guardar las tareas numeradas
-    private Dictionary<int, TaskUI> tasks = new Dictionary<int, TaskUI>();
+    [Header("Configuración de paginación")]
+    [Tooltip("Cantidad de tareas por página")]
+    public int tareasPorPagina = 10; // Número máximo de tareas visibles por página
 
-    // Clase iterna de cada tarea
+    [Header("UI References")]
+    [Tooltip("Texto que muestra 'Página X de Y'")]
+    public TextMeshProUGUI pageCountText; // Texto que muestra en qué página estás actualmente
+
+    // Diccionario que relaciona cada tarea con su interfaz visual (texto, línea, estado)
+    private Dictionary<Task, TaskUI> tasks = new Dictionary<Task, TaskUI>();
+
+    // Clase interna que contiene los elementos visuales de una tarea y si está completada
     private class TaskUI
     {
-        public TextMeshProUGUI textComponent;
-        public Image redLine;
-        public bool isCompleted;
+        public TextMeshProUGUI textComponent; // Texto que se muestra en la tarea
+        public Image redLine;                 // Imagen de la línea de tachado
+        public bool isCompleted;              // Estado de la tarea (true = completada)
     }
 
-
-    private void Awake()
+    void Awake()
     {
+        // Configura el singleton. Si ya existe una instancia y no es esta, se destruye
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -50,78 +61,98 @@ public class Checkboard : MonoBehaviour, ICheckboard
             Instance = this;
         }
 
+        // Por defecto, el libro comienza oculto
         bookHide = true;
     }
 
     void Start()
     {
-        // Ejemplos de registro de tareas iniciales para hacer pruebas (esto luego lo pulir� Yeray con un ResgisterTask)
-        RegisterTask(1, "Pulsa la tecla ' T '");
-        RegisterTask(2, "Ahora pulsa la tecla ' Y '");
-        RegisterTask(3, "Ahora pulsa la tecla ' U '");
+        UpdatePageText(); // Mostrar la página actual al iniciar
 
-        // Carga tareas completadas al iniciar(para que esto funcione se tiene que modificar el cript del menu principal)
-        //foreach (var task in tasks)
-        //{
-        //    int taskOrder = task.Key;
-        //    if (PlayerPrefs.GetInt($"TaskCompleted_{taskOrder}", 0) == 1)
-        //    {
-        //        task.Value.redLine.gameObject.SetActive(true);
-        //        task.Value.textComponent.color = new Color(0.6f, 0.6f, 0.6f);
-        //        task.Value.textComponent.fontStyle = FontStyles.Strikethrough;
-        //        task.Value.isCompleted = true;
-        //        Debug.Log($"Tarea {taskOrder} cargada como completada");
-        //    }
-        //}
+        // Validación 1: asegurar que el PageManager está asignado
+        if (pageManager == null)
+        {
+            pageManager = FindObjectOfType<PageManager>();
+            if (pageManager == null)
+            {
+                Debug.LogError("PageManager no encontrado!");
+                return;
+            }
+        }
 
-        
+        // Validación 2: asegurar que se han asignado las referencias de la interfaz
+        if (tasksContainer == null || taskPrefab == null)
+        {
+            Debug.LogError("TasksContainer o taskPrefab no asignado!");
+            return;
+        }
+
+        // Lanza una corrutina para esperar un frame antes de iniciar, asegurando que el resto del sistema está listo
+        StartCoroutine(DelayedInit());
+    }
+
+    IEnumerator DelayedInit()
+    {
+        yield return null; // Esperamos un frame
+
+        pageManager.UpdatePageCount(); // Calcula cuántas páginas hacen falta
+        ShowCurrentPage();             // Muestra las tareas de la primera página
+
+        // Recorre todas las tareas y restaura su estado guardado como completado
+        foreach (var task in TaskManager.Instance.task)
+        {
+            if (PlayerPrefs.GetString($"TaskCompleted_{task.Summary}", "0") == "1")
+            {
+                if (tasks.TryGetValue(task, out TaskUI taskUI))
+                {
+                    taskUI.redLine.gameObject.SetActive(true);                     // Activa la línea roja de tachado
+                    taskUI.textComponent.color = new Color(0.6f, 0.6f, 0.6f);      // Cambia el color del texto a gris
+                    taskUI.isCompleted = true;                                     // Marca la tarea como completada
+                    Debug.Log($"Tarea {task.Summary} cargada como completada");
+                }
+            }
+        }
     }
 
     void Update()
     {
-        // Para los ejemplos y simulaciones de tareas
-        if (Input.GetKeyDown(KeyCode.T)) CompleteTask(1);
-        if (Input.GetKeyDown(KeyCode.Y)) CompleteTask(2);
-        if (Input.GetKeyDown(KeyCode.U)) CompleteTask(3);
-
+        // Atajo de teclado: muestra u oculta el libro de tareas al pulsar TAB
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             bookHide = !bookHide;
 
-            if (bookHide == true)
-            {
+            if (bookHide)
                 HideBook();
-            }
             else
-            {
                 ShowBook();
-            }
-
         }
     }
 
-    // M�todo para A�ADIR TAREAS NUEVAS (se llamar�n desde otros scripts) es de la interfaz ICheckboard
-    public void RegisterTask(int taskOrder, string description)
+    // Registra una tarea nueva en la interfaz (instancia el prefab y la guarda en el diccionario)
+    public void RegisterTask(Task task)
     {
-        if (tasks.ContainsKey(taskOrder))
+        if (taskPrefab == null || tasksContainer == null)
         {
-            Debug.LogError($"Task order {taskOrder} ya est� registrado."); //por si se duplican tareas
+            Debug.LogError("\u00a1Prefab o container no asignados en Checkboard!", this);
             return;
         }
 
-        // Creamos una nueva tarea desde el prefab
+        if (tasks.ContainsKey(task))
+        {
+            Debug.LogError($"Task {task.Summary} ya está registrada.");
+            return;
+        }
+
         GameObject newTask = Instantiate(taskPrefab, tasksContainer);
         TextMeshProUGUI textComp = newTask.GetComponentInChildren<TextMeshProUGUI>();
-        Image line = newTask.GetComponentInChildren<Image>(true); //Para buscar aunque est� desactivado
+        Image line = newTask.GetComponentInChildren<Image>(true);
 
-
-
-        // Le ponemos el texto (ej: "1. Recoger la llave")
-        textComp.text = $"{taskOrder}. {description}";
+        textComp.text = task.Summary;
         line.gameObject.SetActive(false);
 
-        // La guardamos en el diccionario para luego poder tacharla
-        tasks.Add(taskOrder, new TaskUI
+        newTask.GetComponent<TaskInteractable>()?.SetTask(task);
+
+        tasks.Add(task, new TaskUI
         {
             textComponent = textComp,
             redLine = line,
@@ -129,37 +160,49 @@ public class Checkboard : MonoBehaviour, ICheckboard
         });
     }
 
-    // M�todo para TACHAR TAREAS (se llama autom�ticamente cuando se complete algo) de la interfaz ICheckboard
-    public void CompleteTask(int taskOrder)
+    // Marca una tarea como completada visualmente y lanza la animación de tachado
+    public void CompleteTask(Task task)
     {
-        if (tasks.TryGetValue(taskOrder, out TaskUI task))
+        if (tasks.TryGetValue(task, out TaskUI taskUI))
         {
-            if (task.isCompleted) //Se comprueba si la tarea ya estaba hecha
+            if (taskUI.isCompleted)
             {
-                Debug.Log($"La tarea {taskOrder} ('{task.textComponent.text}') YA ESTABA COMPLETADA");
+                Debug.Log($"La tarea {task.Summary} YA ESTABA COMPLETADA");
                 return;
             }
-            Debug.Log($"�Tarea {taskOrder} COMPLETADA!: {task.textComponent.text}"); //Avisa de la tarea cpmpletada
-            StartCoroutine(TachadoAnimation(task)); //Empieza la animaci�n
+
+            Debug.Log($"\u00a1Tarea COMPLETADA!: {task.Summary}");
+            StartCoroutine(TachadoAnimation(taskUI));
         }
         else
         {
-            Debug.LogError($"No existe la tarea {taskOrder}"); //Por si hiciera falta
+            Debug.LogError($"No existe la tarea {task.Summary}");
         }
     }
 
-    // Todo el tema del tachado (no tocar mucho a menos que quieras cambiar la animaci�n)
+    // Reverso de CompleteTask: deshace el tachado y marca la tarea como incompleta
+    public void UncompleteTask(Task task)
+    {
+        if (tasks.TryGetValue(task, out TaskUI taskUI))
+        {
+            taskUI.redLine.gameObject.SetActive(false);
+            taskUI.textComponent.color = Color.black;
+            taskUI.isCompleted = false;
+
+            PlayerPrefs.SetString($"TaskCompleted_{task.Summary}", "0");
+            PlayerPrefs.Save();
+        }
+    }
+
+    // Corrutina que hace la animación del lápiz y aplica el efecto de tachado visual
     private IEnumerator TachadoAnimation(TaskUI task)
     {
-        // 1. Posicion para el l�piz
         pencil.transform.position = task.textComponent.transform.position + new Vector3(pencilStartOffset, 0, 0);
         pencil.gameObject.SetActive(true);
 
-        // 2. Delay para cuadrar mejor el sonido
         yield return new WaitForSeconds(soundDelay);
         AudioSource.PlayClipAtPoint(scratchSound, Camera.main.transform.position);
 
-        // 3. Animaci�n del l�piz
         float elapsed = 0f;
         Vector3 startPos = pencil.transform.position;
         Vector3 endPos = startPos - new Vector3(pencilTravelDistance, 0, 0);
@@ -171,46 +214,110 @@ public class Checkboard : MonoBehaviour, ICheckboard
             yield return null;
         }
 
-        // 4. Efectos visuales del tachado (texto se vuelve gris, y l�nea roja))
         task.redLine.gameObject.SetActive(true);
         task.textComponent.color = new Color(0.6f, 0.6f, 0.6f);
-        //task.textComponent.fontStyle = FontStyles.Strikethrough;
         task.isCompleted = true;
 
-        // 5. GUARDAR ESTADO AL COMPLETAR
-        // Obtenemos el n�mero de tarea (taskOrder) desde el diccionario
-        int taskOrder = -1;
+        Task taskKey = null;
         foreach (var kvp in tasks)
         {
             if (kvp.Value == task)
             {
-                taskOrder = kvp.Key;
+                taskKey = kvp.Key;
                 break;
             }
         }
 
-        if (taskOrder != -1)
+        if (taskKey != null)
         {
-            PlayerPrefs.SetInt($"TaskCompleted_{taskOrder}", 1); // 1 = completada
+            PlayerPrefs.SetString($"TaskCompleted_{taskKey.Summary}", "1");
             PlayerPrefs.Save();
-            Debug.Log($"Tarea {taskOrder} guardada como completada");
+            Debug.Log($"Tarea {taskKey.Summary} guardada como completada");
         }
 
-
-        // 6. Volver a ocultar l�piz
         yield return new WaitForSeconds(0.4f);
         pencil.gameObject.SetActive(false);
     }
 
-
+    // Muestra visualmente el libro de tareas en pantalla
     public void ShowBook()
     {
-        libroTransform.DOAnchorPosX(-600, 0.5f);
+        libroTransform.DOAnchorPosX(-600, 0.5f); // Mueve la libreta para que aparezca (ajusta X según tu UI)
     }
 
+    // Oculta visualmente el libro de tareas
     public void HideBook()
     {
-        libroTransform.DOAnchorPosX(-1200, 0.5f);
+        libroTransform.DOAnchorPosX(-1200, 0.5f); // Mueve la libreta fuera de la pantalla (ajusta X según tu UI)
+    }
 
+    // Se puede llamar desde fuera para forzar el tachado
+    public void PlayTachadoFromTask(Task task)
+    {
+        CompleteTask(task);
+    }
+
+    // Muestra solo las tareas de la página actual
+    public void ShowCurrentPage()
+    {
+        if (tasksContainer == null || pageManager == null || taskPrefab == null || TaskManager.Instance == null)
+        {
+            Debug.LogError("\u274c Faltan referencias en Checkboard");
+            return;
+        }
+
+        UpdatePageText();
+
+        foreach (Transform child in tasksContainer)
+        {
+            if (child.CompareTag("TaskUI")) // Solo elimina los elementos con el tag "TaskUI"
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        tasks.Clear();
+
+        int startIndex = Mathf.Clamp(pageManager.ActualPage * tareasPorPagina, 0, TaskManager.Instance.task.Count);
+        int endIndex = Mathf.Min(startIndex + tareasPorPagina, TaskManager.Instance.task.Count);
+
+        for (int i = startIndex; i < endIndex; i++)
+        {
+            Task task = TaskManager.Instance.task[i];
+            if (task != null)
+            {
+                RegisterTask(task);
+                if (task.Check) CompleteTask(task);
+            }
+        }
+    }
+
+    // Pasa a la página siguiente
+    public void NextPage()
+    {
+        if (pageManager.ActualPage < pageManager.PageCount - 1)
+        {
+            pageManager.ActualPage++;
+            ShowCurrentPage();
+        }
+    }
+
+    // Vuelve a la página anterior
+    public void PreviousPage()
+    {
+        if (pageManager.ActualPage > 0)
+        {
+            pageManager.ActualPage--;
+            ShowCurrentPage();
+        }
+    }
+
+    // Actualiza el texto que muestra en qué página estamos ("Página X de Y")
+    public void UpdatePageText()
+    {
+        if (pageCountText != null && pageManager != null)
+        {
+            pageCountText.text = $"Página {pageManager.ActualPage + 1} de {pageManager.PageCount}";
+        }
     }
 }

@@ -7,7 +7,6 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
-<<<<<<< HEAD
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Para borrar/LoginScene.unity
@@ -24,16 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 3a1cdabf8d37d4a46b43ddeaad8280a4
-=======
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Chackboard.unity
-    guid: fd1e8055f7d5b0f46b98bd34128ec2fa
-  - enabled: 0
-    path: Assets/Scenes/Escena2.unity
-    guid: ff2c1fb26c7e1d14fb735665a03f9093
-  - enabled: 1
-    path: Assets/Scenes/Escena.unity
-    guid: 4e31c9f334b48c241acecb3b01229e8f
->>>>>>> origin/feature/Yeray
   m_configObjects: {}

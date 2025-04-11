@@ -14,11 +14,18 @@ public class Herramienta : MonoBehaviour
     private bool isDroppedOnValidPoint = false; // Indica si el objeto fue soltado en un punto válido
 
     // Velocidad con la que el objeto sigue al mouse
+    [Header("Movimiento del objeto")]
     [SerializeField] private float followSpeed = 10f;
 
-    [SerializeField] private List<Transform> validDropPoints; //Lista de puntos válidos para soltar el objeto
+    [Header("Puntos válidos para soltar")]
+    [SerializeField] private List<Transform> validDropPoints; // Lista de puntos válidos para soltar el objeto
 
-    [SerializeField] private float validDropDistance = 0.5f; //Distancia mínima para soltar el objeto en un punto válido
+    [SerializeField] private float validDropDistance = 0.5f; // Distancia mínima para soltar el objeto en un punto válido
+
+    [Header("Ajustes de atracción a punto válido")]
+    [SerializeField] private float distanciaIman = 0.5f;   // A qué distancia empieza a atraer
+    [SerializeField] private float velocidadIman = 10f;        // Velocidad de atracción
+
 
     void Start()
     {
@@ -73,9 +80,13 @@ public class Herramienta : MonoBehaviour
         // Si se está arrastrando y es arrastrable
         if (dragging)
         {
+
             // Calcular dirección y aplicar velocidad para mover el objeto suavemente
             Vector3 direction = targetPosition - rb.position;
             rb.velocity = direction * followSpeed;
+
+            CheckSnapToValidPoint(); // <- llama a la función nueva
+
         }
     }
 
@@ -128,4 +139,20 @@ public class Herramienta : MonoBehaviour
 
         Debug.Log("No se encuentra en un punto válido");
     }
+    private void CheckSnapToValidPoint()
+    {
+        foreach (Transform dropPoint in validDropPoints)
+        {
+            float distance = Vector3.Distance(transform.position, dropPoint.position);
+
+            if (distance <= distanciaIman)
+            {
+                // Movimiento de atracción tipo imán
+                Vector3 newPosition = Vector3.Lerp(transform.position, dropPoint.position, velocidadIman * Time.deltaTime);
+                rb.MovePosition(newPosition);
+                break; // Solo nos acercamos al primero que cumpla
+            }
+        }
+    }
+
 }
