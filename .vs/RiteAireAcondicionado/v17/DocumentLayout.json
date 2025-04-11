@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\men\u00FA\\activeoptionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\activeoptionsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\men\u00FA\\pausemenu\\pausescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\pausemenu\\pausescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ActiveOptionsMenu.cs",
+              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
+              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T11:12:06.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PauseScript.cs",
               "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
               "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAgwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T07:36:46.508Z",
               "EditorCaption": ""
