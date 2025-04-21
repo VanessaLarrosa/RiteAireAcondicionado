@@ -1,25 +1,28 @@
 ﻿<Properties StartupConfiguration="{4240A579-6597-6524-2A30-AEFDB3F031E3}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a310e59a-c270-413f-93ef-6a44e99fb90b" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FirstScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Modelado/ClickObjeto.cs">
     <Files>
-      <File FileName="Assets/Scripts/FirstScript.cs" Line="13" Column="43" />
+      <File FileName="Assets/Scripts/Modelado/Camara.cs" Line="3" Column="1" />
+      <File FileName="Assets/Scripts/Modelado/ClickObjeto.cs" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="RiteAireAcondicionado">
+          <Node name="RiteAireAcondicionado" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Modelado" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="22b85798-6cac-4c09-852a-02f1f4c9809f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
