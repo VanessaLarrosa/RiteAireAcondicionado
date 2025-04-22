@@ -1852,7 +1852,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483725812}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2360,7 +2360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6106567, y: -0.8208618}
+  m_AnchoredPosition: {x: 1.6105957, y: -0.82092285}
   m_SizeDelta: {x: 173.41016, y: 87.90201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544963164
@@ -2810,6 +2810,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &660546412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660546413}
+  - component: {fileID: 660546414}
+  m_Layer: 0
+  m_Name: ActivatorOptionsMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &660546413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660546412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5057567, y: 0.6948595, z: -3.0782714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &660546414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660546412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d20709e10f7de409652807c7e9a83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelNameToActivateFromOptions: OptionsMenuPlay
+  panelNameToActivateFromMainMenu: LogosAccess
+  CanvasPlayNameToDeactivate: CanvasPlay
 --- !u!1 &677341756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,7 +6992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6106567, y: -421.15698}
+  m_AnchoredPosition: {x: 1.6105957, y: -421.15698}
   m_SizeDelta: {x: 173.41016, y: -837.605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461653746
@@ -9485,3 +9532,4 @@ SceneRoots:
   - {fileID: 844341797}
   - {fileID: 301811727}
   - {fileID: 483725816}
+  - {fileID: 660546413}
