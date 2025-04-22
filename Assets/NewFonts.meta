@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NewFonts.meta
 guid: 81850e801c0ac8445801d0874c99617f
+========
+guid: f0f92f368b1b09a46ad5ae0a5a1ad5e3
+>>>>>>>> 3daba4fbda8801927b32d9bdeb8657417cceb07c:Assets/Images.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
