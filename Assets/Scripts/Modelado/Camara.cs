@@ -9,7 +9,7 @@ public class Camara : MonoBehaviour
     private Quaternion rotacionInicial;
 
     [Header("Offset de seguimiento")]
-    public Vector3 offset = new Vector3(0, 0, -1.5f);  // Ajusta para ver desde arriba o detrás
+    public Vector3 offset = new Vector3(0, 0.5f, -1.5f);  // Ajusta para ver desde arriba o detrás
 
     private bool siguiendo = false;
 
