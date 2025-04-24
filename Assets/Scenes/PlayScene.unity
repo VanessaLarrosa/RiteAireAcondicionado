@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 414440437}
   - component: {fileID: 414440436}
   - component: {fileID: 414440439}
+  - component: {fileID: 414440440}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -620,9 +621,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414440439}
-        m_TargetAssemblyTypeName: ToggleGameObject, Assembly-CSharp
-        m_MethodName: Toggle
+      - m_Target: {fileID: 414440440}
+        m_TargetAssemblyTypeName: LogicaOpciones, Assembly-CSharp
+        m_MethodName: MostrarOpciones
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -685,6 +686,19 @@ MonoBehaviour:
   objectToToggle: {fileID: 301811723}
   objectToAffectOnToggle: {fileID: 907512202}
   deactivateOnToggleOn: 1
+--- !u!114 &414440440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414440434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19630cfd92223cf4082a45a3a2f8580a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelOpciones: {fileID: 982855594}
 --- !u!1 &444812642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1127,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6348567094340663691}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &907512203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907512202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae37b8f4169c3d4cb578fcbc540e36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980066371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1176,18 @@ RectTransform:
   m_AnchoredPosition: {x: 75, y: 96}
   m_SizeDelta: {x: 1790.081, y: 129.8623}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &982855594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2118144092954886968, guid: 67615498bee2f4741a3dc56b57f78178,
+    type: 3}
+  m_PrefabInstance: {fileID: 6348567094340663691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e6177c128140649b27c277ea358892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1030148457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +3001,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2046829265905236254, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3183596643762415784, guid: 67615498bee2f4741a3dc56b57f78178,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3013,20 +3056,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6729308101898011766, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432373736445564442, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7988563649214973021, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: deactivateOnToggleOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7988563649214973021, guid: 67615498bee2f4741a3dc56b57f78178,
         type: 3}
       propertyPath: objectToAffectOnToggle
       value: 
       objectReference: {fileID: 301811723}
+    - target: {fileID: 8118995335769912682, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8128134430374552562, guid: 67615498bee2f4741a3dc56b57f78178,
         type: 3}
       propertyPath: m_Name
       value: ObjetoEntreEscenas
       objectReference: {fileID: 0}
+    - target: {fileID: 8994836004309564480, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2046829265905236254, guid: 67615498bee2f4741a3dc56b57f78178,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 907512203}
   m_SourcePrefab: {fileID: 100100000, guid: 67615498bee2f4741a3dc56b57f78178, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
