@@ -7,22 +7,16 @@ public class LogicaEntreEscenas : MonoBehaviour
 
     private void Awake()
     {
-        var noDestrirEntreEscenas = FindObjectsOfType<LogicaEntreEscenas>();
-        if(noDestrirEntreEscenas.Length > 1){
-            Destroy(gameObject);
+        // Verifica si ya existe otro objeto entre escenas para evitar duplicados
+
+        var noDestruirEntreEscenas = FindObjectsOfType<LogicaEntreEscenas>();
+        if(noDestruirEntreEscenas.Length > 1) 
+        {
+            Destroy(gameObject); // Destruye el objeto si ya existe otro
             return;
         }
-        DontDestroyOnLoad(gameObject);
-    } 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        DontDestroyOnLoad(gameObject); // Mantiene el objeto entre escenas
+    } 
+    
 }

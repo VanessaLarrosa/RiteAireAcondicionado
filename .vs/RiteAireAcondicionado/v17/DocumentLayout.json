@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\men\u00FA\\scriptbuttonoptionspause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\scriptbuttonoptionspause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\men\u00FA\\activatepanelonload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\activatepanelonload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\men\u00FA\\pausemenu\\pausescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\pausemenu\\pausescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\men\u00FA\\togglegameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|c:\\vanessa\\proyectosdev\\riteaireacondicionado_git\\riteaireacondicionado\\assets\\scripts\\men\u00FA\\togglegameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\togglegameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\men\u00FA\\objetoentreescenas\\controladordeopciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\objetoentreescenas\\controladordeopciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\assets\\scripts\\men\u00FA\\objetoentreescenas\\logicaentreescenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4240A579-6597-6524-2A30-AEFDB3F031E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\men\u00FA\\objetoentreescenas\\logicaentreescenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,68 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ScriptButtonOptionsPause.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ScriptButtonOptionsPause.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ScriptButtonOptionsPause.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ScriptButtonOptionsPause.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ScriptButtonOptionsPause.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:13:42.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ActivatePanelOnLoad.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActivatePanelOnLoad.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ActivatePanelOnLoad.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActivatePanelOnLoad.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ActivatePanelOnLoad.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAYwEYAAAAAAAAAAAAAAA==",
+              "Title": "ControladorDeOpciones.cs",
+              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\ControladorDeOpciones.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\ControladorDeOpciones.cs",
+              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\ControladorDeOpciones.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\ControladorDeOpciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T08:52:24.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T10:54:32.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "LogicaEntreEscenas.cs",
+              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\LogicaEntreEscenas.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\LogicaEntreEscenas.cs",
+              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\LogicaEntreEscenas.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ObjetoEntreEscenas\\LogicaEntreEscenas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T10:40:14.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ToggleGameObject.cs",
               "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ToggleGameObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ToggleGameObject.cs",
               "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ToggleGameObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ToggleGameObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T07:16:26.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ActiveOptionsMenu.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\ActiveOptionsMenu.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T11:12:06.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PauseScript.cs",
-              "DocumentMoniker": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
-              "ToolTip": "C:\\Vanessa\\ProyectosDev\\RiteAireAcondicionado_Git\\RiteAireAcondicionado\\Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Men\u00FA\\PauseMenu\\PauseScript.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T07:36:46.508Z",
+              "WhenOpened": "2025-04-22T07:16:26.926Z",
               "EditorCaption": ""
             }
           ]
